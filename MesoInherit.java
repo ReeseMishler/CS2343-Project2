@@ -3,6 +3,7 @@ public class MesoInherit extends MesoAbstract
 	private MesoStation station;
 	private char[] chars = new char[4];
 	private int[] averages = new int[3];
+	private char letterAvg;
 	
 	public MesoInherit(MesoStation station) {
 		this.station = station;
@@ -16,9 +17,8 @@ public class MesoInherit extends MesoAbstract
 		int sumOfAsciiArr = 0;
 		final double DECIMAL_BOUNDARY = 0.75;
 		final int NUM_OF_CHARS = 4;
-		final int NUM_OF_AVGS = 3;
 		int[] asciiArr = new int[NUM_OF_CHARS];
-		int[] averages = new int[NUM_OF_AVGS];
+		
 		
 		asciiArr[0] = (int)chars[0];
 		asciiArr[1] = (int)chars[1];
@@ -41,14 +41,19 @@ public class MesoInherit extends MesoAbstract
 		else {
 			theAvg = floor;
 		}
-		averages[0] = ceiling;
-		averages[1] = floor;
-		averages[2] = theAvg;
+		this.averages[0] = ceiling;
+		this.averages[1] = floor;
+		this.averages[2] = theAvg;
 		
 		return averages;
 	}
 	
 	public char letterAverage() {
-		
+		this.letterAvg = (char)averages[2];
+		return letterAvg;
+	}
+	
+	public char getLetterAvg() {
+		return this.letterAvg;
 	}
 }
