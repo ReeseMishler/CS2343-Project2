@@ -2,14 +2,13 @@
  * DateTimeInherit is a class that inherits the class named, DateTimeAbstract  
  */
 import java.time.YearMonth;
-import java.util.Scanner;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 public class DateTimeInherit extends DateTimeAbstract {
 	public void daysOfAnyMonth(int monthOfYear, int theYear) {
 		
 		final int FIRST_DAY_OF_MONTH = 1;
-		
+		//Find the amount of days in a provided month
 		YearMonth yearMonthObject = YearMonth.of(theYear, monthOfYear); //Use the given month and year to find the max days in a month
 		int daysInMonth = yearMonthObject.lengthOfMonth();              //Store the max days in a month in variable
 		
