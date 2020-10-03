@@ -18,8 +18,7 @@ public class DateTimeInherit extends DateTimeAbstract {
 		String dayOfLast = dayOfWeek(theYear, monthOfYear, daysInMonth);
 		
 		
-		//Now print the correct statement with this info
-		//In the year 2020, for the 4th month: the first day is WEDNESDAY and the last day is THURSDAY	
+		//Now print the correct statement. Months 1, 2, and 3 will need a slight different output than months 4-12	
 		if(monthOfYear == 1) {
 			System.out.println("In the year of " + theYear + ", for the " + monthOfYear + "st month: the first day is "
 					           + dayOfFirst + " and the last day is " + dayOfLast);
@@ -44,12 +43,8 @@ public class DateTimeInherit extends DateTimeAbstract {
 		LocalDate thisDay =  LocalDate.of(year, month, day);
 		DayOfWeek a = thisDay.getDayOfWeek();
 		int dayOfWeek = a.getValue();
-		//Date thisDay = new Date(year, month, day);
-		
-		//Calendar calendar = Calendar.getInstance();
-		//calendar.setTime(thisDay);
-		//int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
-		
+        
+		//This will give a string for the day of the week which will be returned to to daysOfAnyMonth
 		if(dayOfWeek == 1) {
 			specificDay = "MONDAY";
 		}
