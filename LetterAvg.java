@@ -8,6 +8,7 @@ public class LetterAvg {
 	private int numOfSimilarStations;
 	private ArrayList<String> okStationsArr;
 	private final String meso = "Mesonet.txt";
+	private ArrayList<String> similarStation;
 	
 	public LetterAvg(char avgLetter) {
 		this.avgLetter = avgLetter;
@@ -32,12 +33,26 @@ public class LetterAvg {
 		reader.close();
 		
 		numOfSimilarStations = 0;
+		similarStation = new ArrayList<String>();
 		for(int i = 0; i < okStationsArr.size(); ++i) {
+			
 			if(okStationsArr.get(i).charAt(0) == this.avgLetter) {
 				++numOfSimilarStations;
+				similarStation.add(okStationsArr.get(i)); //ADD THE STATION TO A NEW ARRAY SO THAT WE CAN USE IT TO PRINT IN TO STRING
 			}
 		}
 		return numOfSimilarStations;
 	}
-
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder("These stations are: ");
+		for(int i = 0; i < similarStation.size() - 1; ++i) {
+			sb.append(similarStation.get(i) + " ");
+		}
+		sb.append(similarStation.get(similarStation.size()-1));
+		String output = sb.toString();
+		
+		return output;
+	}
 }
