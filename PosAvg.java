@@ -5,13 +5,16 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class PosAvg {
-	private List<String> okStations;
+	private ArrayList<String> okStations;
 	private String givenID;
 	private final String meso = "Mesonet.txt";
 	private int idxOfGivenID;
 	
-	public int indexOfStation(String stID) throws FileNotFoundException {
+	public PosAvg(String stID) {
 		this.givenID = stID;
+	}
+	public int indexOfStation() throws FileNotFoundException {
+		
 		okStations = new ArrayList<String>();
 		FileInputStream fileByteStream = new FileInputStream(meso);
 		Scanner reader = new Scanner(fileByteStream);
@@ -54,7 +57,10 @@ public class PosAvg {
 	
 	@Override
 	public String toString() {
-		String[] stIDsThatAvg = this.getAverages(idxOfGivenID);
+		//Overridden toString() method will print information about the Stations who's indices average out to equaling
+		// the indices of the givenID
+		String[] stIDsThatAvg = this.getAverages(idxOfGivenID); //Get the strings that will average by calling the getAverages() method
+		
 		String output = "This index is average of " + stIDsThatAvg[0] + " and " + stIDsThatAvg[1] 
 				        + ", " + stIDsThatAvg[2] + " and " + stIDsThatAvg[3] + ", and so on.";
 		return output;
