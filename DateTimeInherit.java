@@ -20,19 +20,19 @@ public class DateTimeInherit extends DateTimeAbstract {
 		
 		//Now print the correct statement. Months 1, 2, and 3 will need a slight different output than months 4-12	
 		if(monthOfYear == 1) {
-			System.out.println("In the year of " + theYear + ", for the " + monthOfYear + "st month: the first day is "
+			System.out.println("In the year " + theYear + ", for the " + monthOfYear + "st month: the first day is "
 					           + dayOfFirst + " and the last day is " + dayOfLast);
 		}
 		else if(monthOfYear == 2) {
-			System.out.println("In the year of " + theYear + ", for the " + monthOfYear + "nd month: the first day is "
+			System.out.println("In the year " + theYear + ", for the " + monthOfYear + "nd month: the first day is "
 			           + dayOfFirst + " and the last day is " + dayOfLast);
 		}
 		else if(monthOfYear == 3) {
-			System.out.println("In the year of " + theYear + ", for the " + monthOfYear + "rd month: the first day is "
+			System.out.println("In the year " + theYear + ", for the " + monthOfYear + "rd month: the first day is "
 			           + dayOfFirst + " and the last day is " + dayOfLast);
 		}
 		else {
-			System.out.println("In the year of " + theYear + ", for the " + monthOfYear + "th month: the first day is "
+			System.out.println("In the year " + theYear + ", for the " + monthOfYear + "th month: the first day is "
 			           + dayOfFirst + " and the last day is " + dayOfLast);
 		}
 		return;
